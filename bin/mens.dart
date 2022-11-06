@@ -1,5 +1,3 @@
-import 'rating.dart';
-
 class Mens {
   int? id;
   String? title;
@@ -20,5 +18,15 @@ class Mens {
     rating = (map['rating'] as List).map((e) {
       return Rating(e['rate'], e['count']);
     }).toList();
+  }
+}
+class Rating {
+  double? rate;
+  int? count;
+
+  Rating(this.rate, this.count);
+  Rating.formMap(Map map) {
+    rate = map['rate'];
+    count = map['count'];
   }
 }
